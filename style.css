@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     
-    background-image: url('/foto1.png.png'); 
+    background-image: url('foto1.png.png'); 
     background-size: contain; 
     
    background-size: 100% 100%; 
@@ -86,7 +86,7 @@ p {
 }
 
 body.pagina2-bg {
-    background-image: url('/ChatGPT\ Image\ 21\ de\ jul.\ de\ 2026\,\ 21_18_37.png'); /* Nome do seu fundo escuro */
+    background-image: url('fundo.png'); /* Nome do seu fundo escuro */
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -155,7 +155,7 @@ body.pagina2-bg {
 }
 
 body.fundo-carta-bg {
-            background-image: url('fundo_carta.png');
+            background-image: url('fundo.carta.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
