@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina2-bg">
+
+    <div class="cartao-p2">
+        <h1>Ah bom.. Voce vai gostar bebe prometo</h1>
+        <p class="subtitulo">(espero..)</p>
+
+        <div class="divisor">✦─── 𖥸 ───✦</div>
+
+        <!-- Os 4 cards com IDs definidos -->
+        <div class="container-cards">
+            <button class="card-opcao" id="card1">
+                <img src="/carta.png" alt="Carta">
+            </button>
+            <button class="card-opcao" id="card2">
+                <img src="/florzinha.png" alt="Rosa">
+            </button>
+            <button class="card-opcao" id="card3">
+                <img src="/fone.png" alt="Música">
+            </button>
+            <button class="card-opcao" id="card4">
+                <img src="/aliança.png" alt="Alianças">
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('card1').addEventListener('click', function() {
+            window.location.href = "pagina_carta.html";
+        });
+
+        document.getElementById('card2').addEventListener('click', function() {
+            window.location.href = "pagina_rosa.html";
+        });
+
+        document.getElementById('card3').addEventListener('click', function() {
+            window.location.href = "pagina_musica.html";
+        });
+
+        // Este é o ícone das Alianças chamando a página do pedido!
+        document.getElementById('card4').addEventListener('click', function() {
+            window.location.href = "pagina_aliancas.html";
+        });
+    </script>
+    <script src="script2.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor Floresce 🌸</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body.fundo-rosa-bg {
+            background-image: url('/ChatGPT\ Image\ 21\ de\ jul.\ de\ 2026\,\ 21_18_37.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #1a0f12;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container-jardim {
+            text-align: center;
+            max-width: 600px;
+            padding: 30px;
+            z-index: 2;
+        }
+
+        /* Área onde as fotos da flor vão aparecer */
+        .area-flor {
+            height: 260px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Estilo da foto da flor com transição suave ao trocar de imagem */
+        .flor-img {
+            max-width: 220px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        /* Efeito especial para quando ela florescer completamente */
+        .flor-img.florida {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 25px rgba(212, 106, 126, 0.7));
+            animation: balancoSuave 3s infinite ease-in-out;
+        }
+
+        @keyframes balancoSuave {
+            0%, 100% { transform: scale(1.1) rotate(0deg); }
+            50% { transform: scale(1.13) rotate(2deg); }
+        }
+
+        /* Status de progresso (Texto) */
+        .status-texto {
+            color: #e6d7ce;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            min-height: 40px;
+            font-style: italic;
+        }
+
+        /* Botão de Regar */
+        .btn-regar {
+            background-color: #6b1d28;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-regar:hover {
+            background-color: #8c2635;
+            transform: scale(1.08);
+        }
+
+        /* Cartão final que aparece quando floresce */
+        .mensagem-final {
+            display: none;
+            background: rgba(245, 237, 230, 0.93);
+            color: #3b1319;
+            padding: 30px 25px;
+            border-radius: 20px;
+            border: 2px solid #8c6b65;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            margin-top: 20px;
+        }
+
+        .mensagem-final.visivel {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mensagem-final h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #591622;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .mensagem-final p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4a2e2b;
+            margin-bottom: 20px;
+        }
+
+        .btn-voltar {
+            background-color: #591622;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-voltar:hover {
+            background-color: #8c2635;
+        }
+
+        /* Pétalas caindo */
+        .petala {
+            position: fixed;
+            top: -10%;
+            user-select: none;
+            pointer-events: none;
+            z-index: 1;
+            animation: cair linear forwards;
+        }
+
+        @keyframes cair {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="fundo-rosa-bg">
+
+    <div class="container-jardim">
+        
+        <div class="area-flor">
+            <!-- Começa com a foto do Broto -->
+            <img src="flor_broto.png" id="florImg" class="flor-img" alt="Flor Brotando">
+        </div>
+
+        <p class="status-texto" id="statusTexto">A nossa florzinha precisa de carinho para crescer...</p>
+
+        <button class="btn-regar" id="btnRegar">Regar nosso amor 🪴</button>
+
+        <!-- MENSAGEM FINAL -->
+        <div class="mensagem-final" id="mensagemFinal">
+            <h2>Você é o Meu Jardim! 🌹</h2>
+            <p>Assim como essa rosa, o nosso amor cresce, floresce e fica mais lindo a cada dia. Obrigado por cuidar de mim e por ser o meu porto seguro!</p>
+            <a href="pagina2.html" class="btn-voltar">← Voltar às Opções</a>
+        </div>
+
+    </div>
+
+    <script>
+        const btnRegar = document.getElementById('btnRegar');
+        const florImg = document.getElementById('florImg');
+        const statusTexto = document.getElementById('statusTexto');
+        const mensagemFinal = document.getElementById('mensagemFinal');
+
+        let cliqueCount = 0;
+
+        btnRegar.addEventListener('click', function() {
+            cliqueCount++;
+
+            if (cliqueCount === 1) {
+                // 1º Clique: Troca para a foto 'flor_meio.png'
+                florImg.style.opacity = '0';
+                
+                setTimeout(() => {
+                    florImg.src = 'flor_meio.png';
+                    florImg.style.opacity = '1';
+                }, 200);
+
+                statusTexto.innerText = "Olha só! Ela está se abrindo... ✨";
+                btnRegar.innerText = "Regar mais um pouco 🌸";
+            } 
+            else if (cliqueCount === 2) {
+                // 2º Clique: Troca para a foto 'flor_aberta.png' e floresce!
+                florImg.style.opacity = '0';
+                
+                setTimeout(() => {
+                    florImg.src = 'flor_aberta.png';
+                    florImg.classList.add('florida');
+                    florImg.style.opacity = '1';
+                }, 200);
+
+                statusTexto.style.display = 'none';
+                btnRegar.style.display = 'none';
+
+                // Exibe a mensagem e inicia a chuva de pétalas
+                setTimeout(() => {
+                    mensagemFinal.classList.add('visivel');
+                    iniciarChuvaDePetalas();
+                }, 600);
+            }
+        });
+
+        function iniciarChuvaDePetalas() {
+            const petalasSimbolos = ['🌸', '🌹', '✨', '💖'];
+            
+            setInterval(() => {
+                const petala = document.createElement('div');
+                petala.classList.add('petala');
+                petala.innerText = petalasSimbolos[Math.floor(Math.random() * petalasSimbolos.length)];
+                
+                petala.style.left = Math.random() * 100 + 'vw';
+                petala.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                petala.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                
+                document.body.appendChild(petala);
+
+                setTimeout(() => {
+                    petala.remove();
+                }, 6000);
+            }, 300);
+        }
+    </script>
+</body>
+</html>

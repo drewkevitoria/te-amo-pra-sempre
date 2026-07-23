@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url('/foto1.png.png'); 
+    background-size: contain; 
+    
+   background-size: 100% 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* O container centralizado */
+.cartao {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* O título com a fonte elegante cursiva */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.8rem;
+    color: #4a121a; /* Tom de vinho escuro/bordô da foto */
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+/* O texto secundário da pergunta */
+p {
+    font-size: 1.1rem;
+    color: #5c3a3e;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Alinhamento dos botões lado a lado */
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilo do botão "Sim" (Bordô escuro) */
+#botaosim {
+    background-color: #4a121a;
+    color: #ffffff;
+    border: 2px solid #6b1d28;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#botaosim:hover {
+    background-color: #6b1d28;
+    transform: scale(1.05);
+}
+
+/* Estilo do botão "Não" (Bege/Rosa claro) */
+#botaonao {
+    background-color: #f2e6e1;
+    color: #5c3a3e;
+    border: 1px solid #d8c2b8;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#botaonao:hover {
+    background-color: #e5d4cc;
+}
+
+#botaonao {
+    position: relative; /* Começa na posição normal dele */
+    transition: all 0.2s ease; /* Faz o movimento de fuga ser suave */
+}
+
+body.pagina2-bg {
+    background-image: url('/ChatGPT\ Image\ 21\ de\ jul.\ de\ 2026\,\ 21_18_37.png'); /* Nome do seu fundo escuro */
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #301c1f; /* Cor de reserva caso a imagem demore a carregar */
+}
+
+.cartao-p2 {
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.cartao-p2 h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #e6d7ce;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.cartao-p2 .subtitulo {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #a88d85;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.divisor {
+    color: #8c6b65;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+    opacity: 0.6;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.card-opcao {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-opcao:hover {
+    transform: translateY(-6px);
+    filter: brightness(1.08);
+}
+
+.card-opcao img {
+    width: 130px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 18px;            /* Cantos arredondados */
+    background-color: #d1b8b0;     /* Cor idêntica à mancha central */
+    padding: 10px;                 /* Espaçamento interno */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+}
+
+body.fundo-carta-bg {
+            background-image: url('fundo_carta.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* Cor de fundo vinho profundo que dá esse tom avermelhado da referência */
+            background-color: #2b080c; 
+            
+            /* Filtro para intensificar os tons vermelhos da imagem de fundo */
+            backdrop-filter: brightness(0.9) contrast(1.1);
+
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }

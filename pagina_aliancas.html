@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Especial 💍</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+    <!-- Script para os Confetes no clique do SIM -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Estilos da caixa adaptados para o fundo claro */
+        .caixa-pedido {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.75); /* Fundo claro semi-transparente elegante */
+            padding: 40px 30px;
+            border-radius: 25px;
+            border: 2px solid #6b1d28;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            margin: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .nome-pedido {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #4a121a; /* Cor tom vinho do texto */
+            margin-bottom: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .nome-sobrenome {
+            color: #6b1d28;
+            transition: all 0.5s ease;
+        }
+
+        .pergunta-pedido {
+            font-size: 1.2rem;
+            color: #5a3d31;
+            margin-bottom: 30px;
+        }
+
+        .botoes-pedido {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            min-height: 60px;
+        }
+
+        .btn-sim {
+            background-color: #4a121a;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn-sim:hover {
+            background-color: #6b1d28;
+            transform: scale(1.08);
+        }
+
+        .btn-nao {
+            background-color: transparent;
+            color: #6b1d28;
+            border: 1px solid #8c5d5d;
+            padding: 12px 28px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Destaque quando mudar o sobrenome para Drewke */
+        .destaque-drewke {
+            color: #8c2635 !important;
+            font-weight: bold;
+            transform: scale(1.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<!-- NOTE: A tag <body> está sem a classe 'pagina2-bg' para carregar o fundo claro foto1.png -->
+<body>
+
+    <div class="caixa-pedido">
+        <h1 class="nome-pedido" id="textoNome">
+            Filipe Foggasso <span class="nome-sobrenome" id="sobrenome">Torella</span>
+        </h1>
+        
+        <p class="pergunta-pedido" id="textoPergunta">aceita casar cmg? 💍✨</p>
+
+        <div class="botoes-pedido" id="containerBotoes">
+            <button class="btn-sim" id="btnSim">SIM! ❤️</button>
+            <button class="btn-nao" id="btnNao">Não...</button>
+        </div>
+    </div>
+
+    <!-- Script interativo do pedido -->
+    <script>
+        const btnSim = document.getElementById('btnSim');
+        const btnNao = document.getElementById('btnNao');
+        const sobrenome = document.getElementById('sobrenome');
+        const textoPergunta = document.getElementById('textoPergunta');
+        const containerBotoes = document.getElementById('containerBotoes');
+
+        // Frases engraçadas para o "Não"
+        const frasesNao = [
+            "Tem certeza?",
+            "Pensa bem...",
+            "Olha que não tem volta hein!",
+            "Erro 404: Opção inválida!",
+            "Epa! Esse botão quebrou 😜",
+            "Sua única opção é o SIM!"
+        ];
+        let contadorNao = 0;
+
+        // --- AÇÃO DO BOTÃO "NÃO" ---
+        btnNao.addEventListener('click', function() {
+            if (contadorNao < frasesNao.length) {
+                btnNao.innerText = frasesNao[contadorNao];
+                btnNao.style.transform = `scale(${1 - (contadorNao * 0.15)})`;
+                contadorNao++;
+            } else {
+                btnNao.style.display = 'none';
+                btnSim.style.transform = 'scale(1.3)';
+            }
+        });
+
+        // --- AÇÃO DO BOTÃO "SIM" ---
+        btnSim.addEventListener('click', function() {
+            // 1. Troca o sobrenome Torella por Drewke
+            sobrenome.innerText = "Drewke";
+            sobrenome.classList.add('destaque-drewke');
+
+            // 2. Muda a frase
+            textoPergunta.innerHTML = "<strong>SABIA QUE VOCÊ IA ACEITAR! 🎉💍<br>Te amo para sempre!</strong>";
+
+            // 3. Mostra a mensagem e o botão de baixar o certificado
+            containerBotoes.innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 15px;">
+                    <p style="color: #6b1d28; font-size: 1.2rem; font-weight: bold; margin: 0;">OFICIALMENTE MEU NOIVO! 🥰</p>
+                    <a href="certificado.pdf" target="_blank" download class="btn-sim" style="text-decoration: none; display: inline-block;">
+                        📜 Baixar Nosso Certificado de Casamento
+                    </a>
+                </div>
+            `;
+
+            // 4. Lança confete na tela!
+            confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+
+            // 5. Abre o PDF automaticamente após 1.5s
+            setTimeout(() => {
+                window.open('certificado casamento.pdf', '_blank');
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

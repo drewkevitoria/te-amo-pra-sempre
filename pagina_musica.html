@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Trilha Sonora 🎵</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body.fundo-musica-bg {
+            background-image: url('fundo2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #1a0f12;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .caixa-musica {
+            text-align: center;
+            background: rgba(26, 15, 18, 0.85);
+            padding: 40px 30px;
+            border-radius: 25px;
+            border: 2px solid #8c6b65;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 480px;
+            width: 85vw;
+            backdrop-filter: blur(5px);
+        }
+
+        .titulo-musica {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.2rem;
+            color: #f2e6e1;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-musica {
+            color: #d1b8b0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* Container do Disco de Vinil */
+        .area-disco {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Efeito do Disco de Vinil Girando */
+        .disco-img {
+            max-width: 200px;
+            width: 50vw;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            animation: girarDisco 8s linear infinite;
+        }
+
+        @keyframes girarDisco {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Botão estilizado com o Link da Playlist */
+        .btn-playlist {
+            background-color: #1db954; /* Verde clássico tom Spotify (ou troque por tom vinho se preferir) */
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .btn-playlist:hover {
+            background-color: #1ed760;
+            transform: scale(1.06);
+        }
+
+        .btn-voltar {
+            color: #a88d85;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 25px;
+            transition: color 0.2s ease;
+        }
+
+        .btn-voltar:hover {
+            color: #f2e6e1;
+        }
+    </style>
+</head>
+<body class="fundo-musica-bg">
+
+    <div class="caixa-musica">
+        <h1 class="titulo-musica">filipe te amo</h1>
+        <p class="subtitulo-musica">Todas as músicas que me lembram você <3 </p>
+
+        <!-- DISCO GIRANDO -->
+        <div class="area-disco">
+            <img src="disco_vinil.png" alt="Disco de Vinil" class="disco-img">
+        </div>
+
+        <!-- BOTÃO COM O LINK DA PLAYLIST -->
+        <!-- Substitua 'SEU_LINK_AQUI' pelo link da playlist de vocês (ex: Spotify/YouTube) -->
+        <a href="https://open.spotify.com/playlist/4DIZaszdfCejjoFLhaQ5zt?si=65b944e9115740dd&pt=5a101492082ff526ec6942197b5f2d71" target="_blank" class="btn-playlist">
+            🎧 Ouvir Nossa Playlist
+        </a>
+
+        <div>
+            <a href="pagina2.html" class="btn-voltar">← Voltar às Opções</a>
+        </div>
+    </div>
+
+</body>
+</html>
